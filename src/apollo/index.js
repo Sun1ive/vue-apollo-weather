@@ -7,8 +7,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 Vue.use(VueApollo);
 
-console.log(API_URL);
-
 // HTTP connexion to the API
 const httpLink = new HttpLink({
   // You should use an absolute URL here

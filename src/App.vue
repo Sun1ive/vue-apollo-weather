@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-
-    <div v-for="city in cities" :key="city.name">{{ city.name }}</div>
+    <table border="1">
+      <caption>Weather cities table</caption>
+      <tr>
+        <th>City name</th>
+        <th>City temperature</th>
+        <th>City pressure</th>
+      </tr>
+      <tr v-for="city in cities" :key="city.name">
+        <td>{{ city.name }}</td>
+        <td>{{ city.temp }}</td>
+        <td>{{ city.pressure }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
-import gql from "graphql-tag";
+import cities from "./schema/weather.gql";
 
 export default {
-  name: "app",
   apollo: {
-    // Vue-Apollo options here
-    cities: gql`
-      query {
-        cities {
-          name
-          temp
-        }
-      }
-    `
+    cities
   }
 };
 </script>
@@ -32,6 +33,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 600px;
+  margin: 70px auto;
 }
 </style>
