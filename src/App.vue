@@ -17,12 +17,8 @@
 </template>
 
 <script>
-import cities from "./schema/weather.gql";
-
 export default {
-  apollo: {
-    cities
-  }
+  name: "app"
 };
 </script>
 
