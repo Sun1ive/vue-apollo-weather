@@ -7,18 +7,23 @@
         <th>City temperature</th>
         <th>City pressure</th>
       </tr>
-      <tr v-for="city in cities" :key="city.name">
-        <td>{{ city.name }}</td>
-        <td>{{ city.temp }}</td>
-        <td>{{ city.pressure }}</td>
-      </tr>
+      <template v-if="false">
+        <tr v-for="city in cities" :key="city.name">
+          <td>{{ city.name }}</td>
+          <td>{{ city.temp }}</td>
+          <td>{{ city.pressure }}</td>
+        </tr>
+      </template>
     </table>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  mounted() {
+    this.$store.dispatch("fetchCities");
+  }
 };
 </script>
 
