@@ -2,10 +2,9 @@ import gql from "graphql-tag";
 
 export default gql`
   query {
-    cities {
-      name
-      temp
-      pressure
+    login {
+      token
+      refreshToken
     }
   }
 `

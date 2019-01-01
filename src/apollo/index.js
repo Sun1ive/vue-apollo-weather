@@ -19,11 +19,19 @@ const cache = new InMemoryCache();
 // Create the apollo client
 const apolloClient = new ApolloClient({
   link: httpLink,
-  cache
+  cache,
+  connectToDevTools: true
 });
 
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient
+  defaultClient: apolloClient,
+  defaultOptions: {
+    // apollo options applied to all queries in components
+    $query: {
+      loadingKey: 'loading',
+      fetchPolicy: 'cache-first'
+    }
+  }
 });
 
 export default apolloProvider;

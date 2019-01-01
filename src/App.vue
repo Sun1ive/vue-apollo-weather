@@ -9,12 +9,16 @@
 </template>
 
 <script>
-import cities from "./schema/weather.gql";
+// import cities from "@/schema/weather.gql";
 
-export default {
-  apollo: {
-    cities
-  }
-};
+// export default {
+//   apollo: {
+//     cities: {
+//       query: cities,
+//       fetchPolicy: "cache-and-network"
+//     }
+//   }
+// };
+//
 </script>
 
