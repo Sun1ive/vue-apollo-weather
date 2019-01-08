@@ -1,10 +1,14 @@
-import gql from "graphql-tag";
+type Query {
+  login(UserInput: LoginInput!): LoginResponse!
+}
 
-export default gql`
-  query {
-    login {
-      token
-      refreshToken
-    }
-  }
-`
+input LoignInput {
+  email: String!
+  password: String!
+}
+
+type LoginResponse {
+  error: Error
+  user: User!
+  token: String!
+}

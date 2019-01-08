@@ -1,11 +1,9 @@
-import gql from "graphql-tag";
+type Query {
+  cities: Cities
+}
 
-export default gql`
-  query {
-    cities {
-      name
-      temp
-      pressure
-    }
-  }
-`
+type Cities {
+  name: String
+  temp: String!
+  pressure: String!
+}

@@ -9,16 +9,26 @@
 </template>
 
 <script>
-// import cities from "@/schema/weather.gql";
+import { cities, loginMutation } from "@/schema";
 
-// export default {
-//   apollo: {
-//     cities: {
-//       query: cities,
-//       fetchPolicy: "cache-and-network"
-//     }
-//   }
-// };
-//
+export default {
+  name: "root",
+
+  data: () => ({
+   cities: []
+  }),
+  apollo: {
+    weather: {
+      query: cities,
+      update({ cities }) {
+        this.cities = cities;
+        console.log(this.$data);
+      },
+      result: ({ data, loading }) => {
+        console.log(data, loading);
+      }
+    }
+  }
+};
 </script>
 
