@@ -9,23 +9,23 @@
 </template>
 
 <script>
-import { cities, loginMutation } from "@/schema";
+import { cities, loginMutation, hottestCity } from "@/schema";
 
 export default {
   name: "root",
 
-  data: () => ({
-   cities: []
-  }),
   apollo: {
-    weather: {
+    hottestCity: {
+      query: hottestCity,
+      result: ({ data }) => {
+        console.log(data);
+      }
+    },
+    cities: {
       query: cities,
-      update({ cities }) {
-        this.cities = cities;
-        console.log(this.$data);
-      },
-      result: ({ data, loading }) => {
+      result({ data, loading }) {
         console.log(data, loading);
+        console.log(this.$data);
       }
     }
   }

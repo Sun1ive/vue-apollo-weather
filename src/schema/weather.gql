@@ -1,9 +1,0 @@
-type Query {
-  cities: Cities
-}
-
-type Cities {
-  name: String
-  temp: String!
-  pressure: String!
-}

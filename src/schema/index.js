@@ -14,6 +14,16 @@ export const cities = gql`
   }
 `;
 
+export const hottestCity = gql`
+  query {
+    hottestCity {
+      name
+      temp
+      pressure
+    }
+  }
+`;
+
 export const loginMutation = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

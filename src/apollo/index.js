@@ -25,14 +25,7 @@ const apolloClient = new ApolloClient({
 });
 
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
-  defaultOptions: {
-    // apollo options applied to all queries in components
-    $query: {
-      loadingKey: 'loading',
-      fetchPolicy: 'cache-first'
-    }
-  }
+  defaultClient: apolloClient
 });
 
 export default apolloProvider;
